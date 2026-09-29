@@ -1,12 +1,12 @@
 # TTS.LQS
 
-Ứng dụng web TTS tiếng Việt theo nhịp phù hợp với lớp học. Giáo viên có thể chia bài theo câu, dấu câu hoặc số từ; phát lặp lại từng đoạn; và dành thời gian cho học sinh chép. Ứng dụng chạy hoàn toàn trên trình duyệt bằng Web Speech API, không cần tài khoản hay backend.
+Ứng dụng web TTS tiếng Việt theo nhịp phù hợp với lớp học. Giáo viên có thể chia bài theo câu, dấu câu hoặc số từ; phát lặp lại từng đoạn; và dành thời gian cho học sinh chép. Ứng dụng dùng Web Speech API cho các giọng của hệ điều hành và có giọng Piper tiếng Việt chạy ngay trên thiết bị.
 
 ## Yêu cầu
 
 - Node.js 20.19+ hoặc 22.12+
 - Trình duyệt hiện đại có `SpeechSynthesis` (Chrome, Edge, Safari hoặc Firefox mới)
-- Để có chất lượng tiếng Việt tốt, cài thêm voice tiếng Việt trong cài đặt giọng nói của hệ điều hành.
+- Chọn giọng **Tiếng Việt · Piper ngoại tuyến** để dùng model đọc tiếng Việt chạy ngay trên thiết bị. Lần đầu dùng, trình duyệt tải khoảng 115 MB model từ kho Piper trên Hugging Face và bộ đọc; các lần sau dùng dữ liệu đã lưu trong trình duyệt.
 
 ## Chạy trên máy
 
@@ -45,4 +45,4 @@ Import repository tại [Netlify](https://app.netlify.com/start). Build command:
 
 ## Quyền riêng tư và giới hạn
 
-Văn bản không được gửi đến máy chủ. Giọng và khả năng hỗ trợ phụ thuộc browser/OS; một số trình duyệt có thể cần thao tác người dùng trước lần đọc đầu. Khi không có voice tiếng Việt, ứng dụng báo rõ và dùng voice mặc định nếu người dùng bắt đầu đọc.
+Văn bản bài đọc không được gửi đi. Giọng Piper tạo âm thanh ngay trong trình duyệt; chỉ model và bộ đọc được tải khi chọn giọng này. Lần đầu có thể cần chờ tải khoảng 115 MB tổng cộng từ trang TTS.LQS và kho model Piper trên Hugging Face; các lần sau trình duyệt dùng dữ liệu đã lưu. Các giọng hệ thống khác vẫn phụ thuộc browser/OS; một số trình duyệt có thể cần thao tác người dùng trước lần đọc đầu.

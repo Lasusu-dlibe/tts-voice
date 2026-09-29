@@ -3,6 +3,7 @@ dist
 .npm-cache
 .site-deploy-stage
 .site-deploy.tar.gz
+.model-cache
 .vercel
 .netlify
 .DS_Store
