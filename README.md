@@ -1,6 +1,6 @@
-# Lớp đọc
+# TTS.LQS
 
-Ứng dụng web đọc văn bản tiếng Việt theo nhịp phù hợp với lớp học. Giáo viên có thể chia bài theo câu, dấu câu hoặc số từ; phát lặp lại từng đoạn; và dành thời gian cho học sinh chép. Ứng dụng chạy hoàn toàn trên trình duyệt bằng Web Speech API, không cần tài khoản hay backend.
+Ứng dụng web TTS tiếng Việt theo nhịp phù hợp với lớp học. Giáo viên có thể chia bài theo câu, dấu câu hoặc số từ; phát lặp lại từng đoạn; và dành thời gian cho học sinh chép. Ứng dụng chạy hoàn toàn trên trình duyệt bằng Web Speech API, không cần tài khoản hay backend.
 
 ## Yêu cầu
 
