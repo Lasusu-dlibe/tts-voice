@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --configLoader runner",
-    "build": "tsc --noEmit && vite build --configLoader runner",
+    "build": "tsc --noEmit && vite build --configLoader runner && node scripts/compress-piper.mjs",
     "preview": "vite preview --configLoader runner"
   },
   "dependencies": {

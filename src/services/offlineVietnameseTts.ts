@@ -21,9 +21,28 @@ type Runtime = {
 
 let runtimePromise: Promise<Runtime> | undefined
 
+async function loadPiperModule(): Promise<typeof import('piper-tts-web')> {
+  if (typeof DecompressionStream === 'undefined') {
+    throw new Error('Trình duyệt không hỗ trợ tải bộ đọc nén. Hãy cập nhật Chrome hoặc Edge.')
+  }
+
+  const response = await fetch(new URL('vendor/piper-tts-web.gzbin', document.baseURI))
+  if (!response.ok || !response.body) throw new Error('Không tải được bộ đọc tiếng Việt.')
+
+  const decompressed = response.body.pipeThrough(new DecompressionStream('gzip'))
+  const bytes = await new Response(decompressed).arrayBuffer()
+  const bundle = new Blob([bytes], { type: 'text/javascript' })
+  const moduleUrl = URL.createObjectURL(bundle)
+  try {
+    return await import(/* @vite-ignore */ moduleUrl) as typeof import('piper-tts-web')
+  } finally {
+    URL.revokeObjectURL(moduleUrl)
+  }
+}
+
 async function getRuntime(): Promise<Runtime> {
   if (!runtimePromise) {
-    runtimePromise = import('piper-tts-web').then(async (piper) => {
+    runtimePromise = loadPiperModule().then(async (piper) => {
       const base = (path: string) => new URL(path, document.baseURI).href
       const provider = new piper.HuggingFaceVoiceProvider()
       const phonemizer = new piper.PhonemizeWebRuntime({ basePath: base('piper/') })

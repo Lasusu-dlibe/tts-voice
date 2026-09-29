@@ -6,7 +6,7 @@
 
 - Node.js 20.19+ hoặc 22.12+
 - Trình duyệt hiện đại có `SpeechSynthesis` (Chrome, Edge, Safari hoặc Firefox mới)
-- Chọn giọng **Tiếng Việt · Piper ngoại tuyến** để dùng model đọc tiếng Việt chạy ngay trên thiết bị. Lần đầu dùng, trình duyệt tải khoảng 115 MB model từ kho Piper trên Hugging Face và bộ đọc; các lần sau dùng dữ liệu đã lưu trong trình duyệt.
+- Chọn giọng **Tiếng Việt · Piper ngoại tuyến** để dùng model đọc tiếng Việt chạy ngay trên thiết bị. Lần đầu dùng, trình duyệt tải khoảng 115 MB model từ kho Piper trên Hugging Face và bộ đọc; các lần sau dùng dữ liệu đã lưu trong trình duyệt. Runtime được tải và giải nén trong trình duyệt từ TTS.LQS khi chọn giọng này.
 
 ## Chạy trên máy
 
@@ -45,4 +45,4 @@ Import repository tại [Netlify](https://app.netlify.com/start). Build command:
 
 ## Quyền riêng tư và giới hạn
 
-Văn bản bài đọc không được gửi đi. Giọng Piper tạo âm thanh ngay trong trình duyệt; chỉ model và bộ đọc được tải khi chọn giọng này. Lần đầu có thể cần chờ tải khoảng 115 MB tổng cộng từ trang TTS.LQS và kho model Piper trên Hugging Face; các lần sau trình duyệt dùng dữ liệu đã lưu. Các giọng hệ thống khác vẫn phụ thuộc browser/OS; một số trình duyệt có thể cần thao tác người dùng trước lần đọc đầu.
+Văn bản bài đọc không được gửi đi. Giọng Piper tạo âm thanh ngay trong trình duyệt; khi chọn giọng này, model được tải từ kho Piper trên Hugging Face, còn runtime và WebAssembly được tải từ TTS.LQS. Lần đầu có thể cần chờ tải khoảng 115 MB tổng cộng; các lần sau trình duyệt dùng dữ liệu đã lưu. Các giọng hệ thống khác vẫn phụ thuộc browser/OS; một số trình duyệt có thể cần thao tác người dùng trước lần đọc đầu.
