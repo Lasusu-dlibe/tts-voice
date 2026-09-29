@@ -1,6 +1,8 @@
 node_modules
 dist
 .npm-cache
+.site-deploy-stage
+.site-deploy.tar.gz
 .vercel
 .netlify
 .DS_Store
